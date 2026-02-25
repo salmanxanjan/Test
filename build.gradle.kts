@@ -31,18 +31,3 @@ allprojects {
         }
     }
 }
-tasks.register("installPrePushHook") {
-    doLast {
-        val hooksDir = file(".git/hooks")
-        val source = file("scripts/pre-push")
-        val target = file(hooksDir)
-
-        if (source.exists()) {
-            source.copyTo(target, overwrite = true)
-            target.setExecutable(true)
-            println("Pre-push hook installed successfully!")
-        } else {
-            println("Warning: scripts/pre-push not found!")
-        }
-    }
-}
