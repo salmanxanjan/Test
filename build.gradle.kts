@@ -28,7 +28,9 @@ allprojects {
         filter {
             exclude("**/generated/**")
             exclude("**/build/**")
-        } } }
+        }
+    }
+}
 
 tasks.withType<Detekt>().configureEach {
     reports {

@@ -12,11 +12,8 @@ detektStatus=$?
 # return 1 exit code if running checks fails
 [ $detektStatus -ne 0 ] && exit 1
 
-echo "
-===================
-|  Formatting code with ktlintFormat...
-===================
-"
+echo "Running ktlintFormat..."
+
 ./gradlew ktlintFormat
 
 echo "
